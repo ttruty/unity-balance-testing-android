@@ -45,12 +45,12 @@ public class BluetoothConnect : MonoBehaviour
         oculusLeft = leftFoot.GetComponent<BluetoothDevice>();
         oculusRight = rightFoot.GetComponent<BluetoothDevice>();
         
-        Destroy(GameObject.Find("BluetoothLEReceiver"));
         Debug.Log("Starting");
         BluetoothLEHardwareInterface.Initialize(true, false, () => { },
                                       (error) => { }
         );
         Invoke("scan", 1f);
+        
 
     }
 
